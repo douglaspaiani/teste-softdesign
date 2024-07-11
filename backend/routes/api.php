@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\Usuarios;
 use Illuminate\Support\Facades\Route;
 
 Route::post('/login', [\App\Http\Controllers\UsuariosController::class, 'login']);

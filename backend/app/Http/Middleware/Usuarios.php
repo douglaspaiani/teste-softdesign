@@ -16,10 +16,15 @@ class Usuarios
     public function handle(Request $request, Closure $next): Response
     {
         session_start();
+        return response()->json($_SESSION);
         if(isset($_SESSION['usuario']) && !empty($_SESSION['usuario'])){
             return $next($request);
         } else {
-            return redirect()->route('login');
+            return response()->json([
+                'status' => false,
+                'message' => 'Login necessário',
+                'data' => []
+            ]);
         }
     }
 }
