@@ -1,0 +1,17 @@
+
+<div class="login-container">
+    <h2>Livros cadastrados</h2>
+    <a routerLink="/cadastrar" class="button">Cadastrar novo livro</a>
+    <ul class="livros">
+      <li *ngFor="let livro of livros">
+        {{ livro.titulo }} - {{ livro.autor }} (<a routerLink="/editar/{{livro.id}}">Editar</a> | <a routerLink="/apagar/{{livro.id}}">Excluir</a>)
+      </li>
+    </ul>
+    <div *ngIf="erro" class="error">
+      {{ erro }}
+    </div>
+    <div *ngIf="livros.length === 0" class="aviso">
+      Nenhum livro cadastrado.
+    </div>
+    <a class="button" (click)="Logout()">Logout</a>
+  </div>

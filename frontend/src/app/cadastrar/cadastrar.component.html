@@ -1,0 +1,23 @@
+<div class="login-container">
+    <h1>Cadastrar livro</h1>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label for="titulo">Título</label>
+        <input type="text" id="titulo" name="titulo" [(ngModel)]="livro[0].titulo" required>
+      </div>
+      <div>
+        <label for="descricao">Descrição</label>
+        <input type="text" id="descricao" name="descricao" [(ngModel)]="livro[0].descricao" required>
+      </div>
+      <div>
+        <label for="autor">Autor</label>
+        <input type="text" id="autor" name="autor" [(ngModel)]="livro[0].autor" required>
+      </div>
+      <div>
+        <label for="qnt_paginas">Quantidade de páginas</label>
+        <input type="number" id="qnt_paginas" name="qnt_paginas" [(ngModel)]="livro[0].qnt_paginas" required>
+      </div>
+      <button type="submit">Cadastrar este livro</button>
+    </form>
+  </div>
+  
